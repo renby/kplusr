@@ -1,20 +1,6 @@
-*
-  box-sizing: border-box
-  margin: 0
-  padding: 0
-body
-  line-height: 1.5em
-ul
-  list-style: none
 img
   border: 10px solid #f3f0e8
-  display: block
   margin: 1em auto
-  max-width: 100%
-a
-  border-bottom: 1px dotted #4152a0
-  color: #4152a0
-  text-decoration: none
 
 #proposal img
   width: 700px
@@ -62,9 +48,8 @@ a
     z-index: -1
 
 .section
+  +apply-grid
   margin: 80px auto
-  padding-left: 15%
-  padding-right: 15%
   text-align: center
   a
     color: #aaa
@@ -94,27 +79,58 @@ a
         left: -34px
 
 .section-header
+  max-width: 920px
   position: relative
+  +respond-to($xs, $s)
+    margin: 140px auto 160px
+  +respond-to($m, $l)
+    margin: 180px auto 200px
   &::before,
   &::after
     color: #f3f0e8
-    font: 70px LifehackGoodies-Regular
+    font-family: LifehackGoodies-Regular
     position: absolute
-    top: 38px
-    transform: rotate(90deg)
+    +respond-to($xs, $s)
+      +font-size(100px)
+      opacity: .5
+      width: 100%
+      left: 0
+    +respond-to($m, $l)
+      +font-size(150px)
+      opacity: .5
+      width: 100%
+      left: 0
+    +respond-to($xl, $xxl)
+      +font-size(70px)
+      top: 90px
+      transform: rotate(90deg)
   &::before
     content: "r"
-    left: 0
+    +respond-to($xs, $s)
+      bottom: -105px
+    +respond-to($m, $l)
+      bottom: -128px
+    +respond-to($xl, $xxl)
+      left: -74px
   &::after
     content: "q"
-    right: 0
+    +respond-to($xs, $s)
+      top: -76px
+    +respond-to($m, $l)
+      top: -90px
+    +respond-to($xl, $xxl)
+      right: -62px
   > p
     color: #ccc
     font: 32px LifehackSans-Regular
     letter-spacing: 0.05em
   > h1
+    +font-size(48px, 72px)
     color: #ff8a76
-    font: 64px LifehackItalic-Regular
+    font-family: LifehackItalic-Regular
+    margin: 0
+    +respond-to($xl, $xxl)
+      +font-size(64px, 96px)
 
 .section-details
   text-align: center

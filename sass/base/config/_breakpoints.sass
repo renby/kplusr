@@ -1,0 +1,18 @@
+// ==============================
+// Breakpoints
+// ==============================
+$xs:          #{"screen and (max-width: 479px)"}
+$s:           #{"screen and (min-width: 480px) and (max-width: 599px)"}
+$m:           #{"screen and (min-width: 600px) and (max-width: 767px)"}
+$l:           #{"screen and (min-width: 768px) and (max-width: 1023px)"}
+$xl:          #{"screen and (min-width: 1024px) and (max-width: 1279px)"}
+$xxl:         #{"screen and (min-width: 1280px)"}
+$breakpoints: $xs $s $m $l $xl $xxl
+
+// aliases for faster access through respond-to mixin
+$thin:  #{$xs, $s, $m}
+$thick: #{$l, $xl, $xxl}
+
+// screen density
+$lodpi: #{"screen and (-webkit-max-device-pixel-ratio: 1.5), screen and (max-resolution: 144dpi), screen and (max-resolution: 1.5dppx)"}
+$hidpi: #{"screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 144dpi), screen and (min-resolution: 1.5dppx)"}

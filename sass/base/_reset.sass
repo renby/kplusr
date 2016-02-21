@@ -1,0 +1,44 @@
+// Apply border-box to all elements
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+html
+  height: 100%
+  margin: 0 auto
+
+body
+  overflow-x: hidden
+  position: relative
+  text-size-adjust: 100% // https://developer.mozilla.org/en-US/docs/CSS/text-size-adjust
+  width: 100%
+  -webkit-text-stroke: 1.0px rgba(black,0) // hack for Windows Chrome issue where white text doesn't render
+
+html,
+body,
+table,
+input,
+textarea,
+select,
+button
+  font: #{$base-font}
+
+a
+  border-bottom: 1px dotted #4152a0
+  color: #4152a0
+  text-decoration: none
+
+img
+  display: block
+  max-width: 100%
+
+pre,
+code
+  font: #{$fixed-font}
+
+em
+  font-style: italic
+
+ul
+  list-style: none

@@ -1,0 +1,87 @@
+// General Helpers
+// http://nicolasgallagher.com/micro-clearfix-hack/
+=clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+// disables highlight on touch interaction
+=disable-tap-highlight
+  -webkit-tap-highlight-color: rgba(black,0)
+
+// translates line-height to a relative value
+=line-height($line-height: $base-line-height, $font-size: $base-font-size)
+  line-height: $line-height / $font-size
+
+// translates font-size and line-height to relative values
+=font-size($font-size: $base-font-size, $line-height: null)
+  font-size: $font-size
+  @if $line-height
+    +line-height($line-height, $font-size)
+
+// smoothes type
+=font-smoothing($value: subpixel-antialiased)
+  -webkit-font-smoothing: $value
+  @if $value == antialiased
+    -moz-osx-font-smoothing: grayscale
+
+// hides an element from both screenreaders and browsers;
+// @param $visual - when true, leaves it available for screenreaders
+// @param $focusable - when true, allows the element to be focused
+=hide($visual: false, $focusable: false)
+  @if $visual
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+    @if $focusable
+      &:active,
+      &:focus
+        clip: auto
+        height: auto
+        margin: 0
+        overflow: visible
+        position: static
+        width: auto
+  @else
+    display: none !important
+    visibility: hidden
+
+// ----------------------------------------
+// Grid Helpers
+// ----------------------------------------
+=apply-grid($max-width: false)
+  +clearfix
+  @for $i from 1 through length($breakpoints)
+    $breakpoint: nth($breakpoints, $i)
+    $container: nth($containers, $i)
+    +respond-to($breakpoint)
+      @if $max-width == true
+        max-width: $container
+      @else
+        +container($container)
+
+=container($container-width)
+  margin-left: auto
+  margin-right: auto
+  width: $container-width
+
+  // fluid thin breakpoints
+  +respond-to($thin)
+    padding-left: 20px
+    padding-right: 20px
+
+// ----------------------------------------
+// Responsive Helpers
+// ----------------------------------------
+=respond-to($media...)
+  $media-list: null
+  @each $query in $media
+    $media-list: append($media-list, unquote("#{$query}"), comma)
+  @media #{$media-list}
+    @content
