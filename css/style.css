@@ -1,0 +1,203 @@
+@import url(vendor/normalize.css);
+* {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  line-height: 1.5em; }
+
+ul {
+  list-style: none; }
+
+img {
+  border: 10px solid #f3f0e8;
+  display: block;
+  margin: 1em auto;
+  max-width: 100%; }
+
+a {
+  border-bottom: 1px dotted #4152a0;
+  color: #4152a0;
+  text-decoration: none; }
+
+#proposal img {
+  width: 700px; }
+
+.hide {
+  display: none; }
+
+.nav {
+  margin: 0 auto;
+  height: 80px;
+  width: 100px; }
+  .nav > ul {
+    background-color: #f8f8f8;
+    border: 1px solid #000;
+    border-top: none;
+    margin-top: -85px;
+    padding: 22px 0;
+    position: absolute;
+    -webkit-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+    text-align: center;
+    width: inherit;
+    z-index: 1; }
+    .nav > ul:hover {
+      margin-top: 0; }
+    .nav > ul > li {
+      font: 16px LifehackSans-Regular;
+      letter-spacing: 0.05em; }
+
+.logo {
+  position: relative; }
+
+.logo-type {
+  color: #fff;
+  display: block;
+  font: 16px "Lucida Console", sans-serif;
+  letter-spacing: 0.2em;
+  margin-top: 40px; }
+  .logo-type::before {
+    color: #4152a0;
+    content: "G";
+    font: 48px LifehackGoodies-Regular;
+    position: absolute;
+    left: 5px;
+    top: -22px;
+    z-index: -1; }
+
+.section {
+  margin: 80px auto;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: center; }
+  .section a {
+    color: #aaa; }
+  .section p {
+    color: #555;
+    font: 16px "Lucida Console", sans-serif;
+    line-height: 1.25em;
+    margin: 15px 0; }
+  .section > h2 {
+    color: #aaa;
+    font: 48px LifehackSans-Bold;
+    letter-spacing: 0.05em; }
+    .section > h2 > .the {
+      color: #aaa;
+      display: inline-block;
+      letter-spacing: 0;
+      position: relative;
+      font: 24px LifehackSans-Regular;
+      margin-left: 34px;
+      margin-right: 40px;
+      text-transform: lowercase; }
+      .section > h2 > .the::before {
+        content: "l";
+        font: 38px LifehackGoodies-Regular;
+        position: absolute;
+        top: -7px;
+        left: -34px; }
+
+.section-header {
+  position: relative; }
+  .section-header::before, .section-header::after {
+    color: #f3f0e8;
+    font: 70px LifehackGoodies-Regular;
+    position: absolute;
+    top: 38px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  .section-header::before {
+    content: "r";
+    left: 0; }
+  .section-header::after {
+    content: "q";
+    right: 0; }
+  .section-header > p {
+    color: #ccc;
+    font: 32px LifehackSans-Regular;
+    letter-spacing: 0.05em; }
+  .section-header > h1 {
+    color: #ff8a76;
+    font: 64px LifehackItalic-Regular; }
+
+.section-details {
+  text-align: center; }
+  .section-details dt {
+    color: #4152a0;
+    font: 24px LifehackSans-Regular;
+    letter-spacing: 0.05em;
+    margin: 10px auto; }
+  .section-details dd {
+    color: #555;
+    font: 20px "Lucida Console", sans-serif;
+    line-height: 1.25em;
+    margin: 0;
+    margin-bottom: 1em; }
+
+.section-them {
+  padding-left: 5%;
+  padding-right: 5%; }
+
+/* modals */
+.modal {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; }
+  .modal > span {
+    cursor: pointer;
+    font: 20px "Lucida Console", sans-serif;
+    position: absolute;
+    top: 15px;
+    right: 15px; }
+
+.modal-okc {
+  border: 1px dotted #333;
+  width: 800px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -200px auto auto -400px;
+  overflow: scroll;
+  z-index: 2; }
+  .modal-okc dl {
+    text-align: left;
+    margin: 30px; }
+  .modal-okc dt,
+  .modal-okc dd {
+    display: inline-block;
+    margin: 16px;
+    vertical-align: top; }
+  .modal-okc dt {
+    display: inline-block;
+    font: 14px "Lucida Console", sans-serif;
+    width: 25%; }
+  .modal-okc dd {
+    display: inline-block;
+    font: 16px "Lucida Console", sans-serif;
+    width: 60%; }
+
+/* bios */
+.bios {
+  text-align: center; }
+  .bios > li {
+    display: inline-block;
+    margin: 1.5em;
+    vertical-align: top; }
+    .section-us .bios > li {
+      width: 40%; }
+    .section-them .bios > li {
+      width: 28%; }
+  .bios h3 {
+    color: #ff8a76;
+    font: 24px LifehackSans-Regular;
+    letter-spacing: 0.05em; }
+  .bios img {
+    width: 300px; }
