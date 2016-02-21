@@ -196,15 +196,18 @@ img
 
 /* bios */
 .bios
+  display: flex
+  flex-wrap: wrap
   text-align: center
-  > li
-    display: inline-block
+  +respond-to($xs, $s)
+    flex-direction: column
+  li
+    flex: 1
     margin: 1.5em
-    vertical-align: top
-    .section-us &
-      width: 40%
-    .section-them &
-      width: 28%
+    +respond-to($m, $l)
+      min-width: 200px
+    +respond-to($xl, $xxl)
+      min-width: 300px
   h3
     color: #ff8a76
     font: 24px LifehackSans-Regular
